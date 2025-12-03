@@ -24,7 +24,6 @@ def pregunta_01():
     base_1=base.copy()
     base_1=base_1.dropna()
     base_1=base_1.drop_duplicates()
-    base_1.info()
     columnas_texto=["sexo","tipo_de_emprendimiento","idea_negocio","línea_credito"]
     for col in columnas_texto:
         base_1[col]=(base_1[col].str.lower()
@@ -48,7 +47,6 @@ def pregunta_01():
                                  str.replace(r'[$,]',"",regex=True).
                                  apply(lambda x: float(x)))
     base_1=base_1.drop_duplicates()
-    base_1.info()
     def guardar_datos(df):
         carpeta_salida="files/output"
         if not os.path.exists(carpeta_salida):
@@ -57,7 +55,6 @@ def pregunta_01():
         df.to_csv(ruta_completa,sep=';',index=False, encoding='utf-8')
     guardar_datos(base_1)
     base_2=pd.read_csv("files/output/solicitudes_de_credito.csv", sep=";")
-    base_2.info()
     conteo = base_1["barrio"].value_counts()
 
 
