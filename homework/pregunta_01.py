@@ -60,3 +60,4 @@ def pregunta_01():
     base_2.info()
     conteo = base_1["barrio"].value_counts()
 
+
