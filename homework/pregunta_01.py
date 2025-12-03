@@ -4,7 +4,7 @@ Escriba el codigo que ejecute la accion solicitada en la pregunta.
 
 
 from email.mime import base
-from turtle import pd
+import pandas as pd
 
 
 def pregunta_01():
